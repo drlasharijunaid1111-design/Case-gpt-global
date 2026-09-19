@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CASE GPT</title>
+<style>
+body{margin:0;background:#021a12;color:#fff;font-family:sans-serif}
+.h{background:radial-gradient(#0a5a3f,#021a12);text-align:center;padding:30px 15px}
+.h h1{font-size:42px;margin:0;text-shadow:0 0 15px #00ff88}
+select,input{width:92%;max-width:480px;display:block;margin:12px auto;padding:15px 18px;border-radius:30px;border:1.5px solid #1a8a64;background:#082219;color:#a7f3d0;font-size:15px}
+.btn{display:block;margin:12px auto;background:#00c27a;color:#fff;border:none;padding:15px 35px;border-radius:30px;font-weight:700;font-size:16px}
+#answer{display:none;background:#0a3326;border:1px solid #1a6b52;border-radius:18px;padding:18px;margin:16px;max-width:600px;margin:auto;text-align:left;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="h">
+<h1>CASE GPT</h1>
+<p>Qanoon • Shariat • Fiqah • Sunnat</p>
+<select id="country">
+<option>Pakistan</option>
+<option>Saudi Arabia</option>
+<option>India</option>
+<option>United Arab Emirates</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>Turkey</option>
+<option>Malaysia</option>
+<option>Indonesia</option>
+<option>Qatar</option>
+<option>Kuwait</option>
+<option>Bahrain</option>
+<option>Oman</option>
+<option>Bangladesh</option>
+<option>Canada</option>
+<option>Australia</option>
+<option>All Other Countries</option>
+</select>
+<input id="q" placeholder="Yahan Sawal Likhein...">
+<button class="btn" onclick="searchGPT()">Search Case GPT</button>
+</div>
+<div id="answer"></div>
+<script>
+function searchGPT(){
+let c=document.getElementById('country').value;
+let q=document.getElementById('q').value.toLowerCase();
+let ans=document.getElementById('answer');
+ans.style.display='block';
+ans.innerHTML='⏳ '+c+' ke qanoon ke mutabiq jawab...';
+setTimeout(()=>{
+if(q.includes('sister')||q.includes('behen')||q.includes('hisaa')){
+ans.innerHTML=`<h3>🧕 Sister ka Hissa - ${c} me</h3><b>1. Shariat:</b><br>- 1 behen akeli = 1/2<br>- 2+ behene = 2/3<br>- Bhai ke sath = Bhai double, Behen single (2:1) Quran 4:11<br><br><b>2. ${c} ka Qanoon:</b><br>${c} me Shariat ke mutabiq hissa milna laazmi hai.<br><br><b>Example:</b> 1 beta 1 beti ho to 3 hisse, 2 bhai ko 1 behen ko.`;
+}else{
+ans.innerHTML=`<b>Sawal:</b> ${q}<br><b>Country:</b> ${c}<br><br>Iska jawab Qanoon Library me talaash ho raha hai. Inheritance, property, talaq, khula ke sawal detail se likhein.`;}
+},800);
+}
+</script>
+</body>
+  </html>
