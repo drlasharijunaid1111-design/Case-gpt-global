@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CASE GPT</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}body{background:#f5f5f5}.header{background:linear-gradient(135deg,#0f6b4d,#0a4a36);color:white;text-align:center;padding:50px 20px}.header h1{font-size:42px}.container{padding:20px;max-width:500px;margin:auto}.card{background:linear-gradient(135deg,#00b47a,#006a4e);border-radius:28px;padding:28px;margin-bottom:18px;color:white}.card:active{transform:scale(0.97)}.page{display:none;padding:25px;max-width:500px;margin:auto;background:white;min-height:100vh}.page.active{display:block}.back{background:#0f6b4d;color:white;border:none;padding:12px 20px;border-radius:10px;margin-bottom:20px}.qa{background:#f0faf6;padding:15px;border-radius:12px;margin-bottom:10px;border-left:4px solid #00b47a}</style>
+</head><body>
+<div id="home"><div class="header"><h1>CASE GPT</h1><p>Sunnat | Shariat | Fiqah | Qanoon</p></div><div class="container">
+<div class="card" onclick="openPage('sunnat')"><h2>📖 Sunnat</h2><p>Nabi ﷺ ki Sunnat</p></div>
+<div class="card" onclick="openPage('shariat')"><h2>☪️ Shariat</h2><p>Quran o Sunnat</p></div>
+<div class="card" onclick="openPage('fiqah')"><h2>⚖️ Fiqah</h2><p>Fiqhi Masail</p></div>
+<div class="card" onclick="openPage('qanoon')" style="background:linear-gradient(135deg,#0a5a8a,#0a3a5a)"><h2>📜 Qanoon</h2><p>Pakistani Qanoon</p></div>
+</div></div>
+<div id="sunnat" class="page"><button class="back" onclick="goHome()">← Wapas</button><h3>📖 Sunnat</h3><div class="qa">Sunnat - Nabi ﷺ ke qaul o feal ko kehte hain.</div></div>
+<div id="shariat" class="page"><button class="back" onclick="goHome()">← Wapas</button><h3>☪️ Shariat</h3><div class="qa">Quran aur Sunnat ke ahkam.</div></div>
+<div id="fiqah" class="page"><button class="back" onclick="goHome()">← Wapas</button><h3>⚖️ Fiqah</h3><div class="qa">Fiqhi masail ka ilm.</div></div>
+<div id="qanoon" class="page"><button class="back" onclick="goHome()">← Wapas</button><h3>📜 Qanoon</h3><div class="qa">Pakistani Qanoon - FIR, Khula etc.</div></div>
+<script>function openPage(id){document.getElementById('home').style.display='none';document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active')}function goHome(){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('home').style.display='block'}</script>
+</body></html>
